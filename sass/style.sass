@@ -10,4 +10,44 @@
 @import utils/global
 @import components/header
 @import components/footer
+.site-wrapper
+	width: 100%
+	height: 150vh
+	display: grid
+	grid-template-columns: repeat(7, 1fr)
+	grid-auto-rows: minmax(50px, auto)
+	grid-template-areas: "hd hd hd hd hd hd hd" "sd cont cont cont cont cont cont" "ft ft ft ft ft ft ft"
 
+.header
+	background-color: whitesmoke
+	grid-area: hd
+.sidebar
+	background-color: plum
+	grid-area: sd
+.content
+	padding: 30px
+	grid-area: cont
+	font-size: 30px
+	line-height: 1em
+	background-color: aqua
+	display: grid
+	grid-template-columns: repeat(8, 1fr)
+	grid-auto-rows: minmax(80px, auto)
+	grid-template-areas: "t1 t1 t1 t2 t2 t3 t3 t3"
+	gap: 10px
+.text
+	&-1
+		grid-area: t1
+	&-2
+		grid-area: t2
+	&-3
+		grid-area: t3
+	&-1,
+	&-2,
+	&-3
+		border: 2px solid green
+		overflow-y: auto
+		padding: 15px
+.footer
+	grid-area: ft
+	background-color: tomato
